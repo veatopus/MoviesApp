@@ -6,9 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +45,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
     }
 
 
-    class MoviesViewHolder extends RecyclerView.ViewHolder{
+    static class MoviesViewHolder extends RecyclerView.ViewHolder{
         private TextView title;
         private RoundedImageView roundedImageView;
         private TextView imdbRating;
@@ -63,15 +61,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
             buttonFavorite = itemView.findViewById(R.id.button_favorite);
             buttonFavoriteBorder = itemView.findViewById(R.id.button_favorite_border);
             setListener();
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    View view = LayoutInflater.from(v.getContext()).inflate(R.layout.layout_bottom_sheet, null);
-                    BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(itemView.getContext());
-                    bottomSheetDialog.setContentView(view);
-                    bottomSheetDialog.show();
-                }
-            });
+
         }
 
         @SuppressLint("SetTextI18n")
@@ -98,6 +88,19 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
                 @Override
                 public void onClick(View v) {
                     aLike();
+                }
+            });
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    @SuppressLint("InflateParams") View view = LayoutInflater.from(v.getContext()).inflate(R.layout.layout_bottom_sheet, null);
+                    BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(itemView.getContext());
+                    bottomSheetDialog.setContentView(view);
+                    RoundedImageView roundedImageView = view.findViewById(R.id.roundedimageview);
+                    roundedImageView.setImageResource(movie.getImage());
+
+                    bottomSheetDialog.show();
                 }
             });
         }
