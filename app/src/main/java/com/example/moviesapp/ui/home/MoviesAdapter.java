@@ -51,7 +51,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
         private TextView imdbRating;
         private Button buttonFavorite;
         private Button buttonFavoriteBorder;
-        Movie movie;
+        private Movie movie;
 
         public MoviesViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -70,6 +70,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
             title.setText(movie.getTitle());
             roundedImageView.setImageResource(movie.getImage());
             imdbRating.setText(movie.getImdbRating().toString());
+
             if (movie.isLike()){
                 Log.e("ololo", "onBind");
                 buttonFavorite.setVisibility(View.VISIBLE);
@@ -94,7 +95,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    @SuppressLint("InflateParams") View view = LayoutInflater.from(v.getContext()).inflate(R.layout.layout_bottom_sheet, null);
+                    View view = LayoutInflater.from(v.getContext()).inflate(R.layout.layout_bottom_sheet, null);
                     BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(itemView.getContext());
                     bottomSheetDialog.setContentView(view);
                     RoundedImageView roundedImageView = view.findViewById(R.id.roundedimageview);

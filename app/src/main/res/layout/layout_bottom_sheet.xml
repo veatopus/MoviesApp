@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/imdbRating"
+            android:id="@+id/bottom_sheet_imdbRating_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="7.6"
@@ -77,6 +77,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/bottom_shit_name_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_view_movie_example"
@@ -85,6 +86,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/bottom_shit_year_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Year: 2017"
@@ -92,6 +94,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/bottom_shit_rated_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rated: PG-13"
@@ -124,6 +127,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/bottom_shit_released_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Released: 05 May 2017"
@@ -131,6 +135,7 @@
 
 
             <TextView
+                android:id="@+id/bottom_shit_runtime_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -138,13 +143,15 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/bottom_shit_awards_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Released: 05 May 2017"
+                android:text="Awards: Nominated for 1 Oscar. Another 15 wins and 56 nominations."
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/bottom_shit_plot_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
