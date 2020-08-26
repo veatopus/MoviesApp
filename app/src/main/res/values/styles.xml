@@ -7,12 +7,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-   <!-- <style name="BottomShitDialogTheme" parent="Animation.Design.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/BottomShitStyle</item>
-    </style>
-
-    <style name="BottomShitStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="background">@android:color/transparent</item>
-    </style>-->
-    
 </resources>
